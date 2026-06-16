@@ -24,7 +24,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
         <a href="/mokinyste">MOKINYSTĖ</a>
         <a href="/misiju-centras">MISIJŲ CENTRAS</a>
         <a href="/parama">PARAMA</a>
-        <a class="button-secondary" href="/bendruomene">BENDRUOMENĖS ERDVĖ</a>
+        <a class="button-secondary header__cta" href="/bendruomene">BENDRUOMENĖS ERDVĖ</a>
       </nav>
     </div>
   </header>
@@ -32,31 +32,57 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
   <main>
     <section class="hero">
       <div class="container hero__inner">
-        <div>
+        <div class="hero__content">
           <p class="hero__eyebrow">Atverkite duris Kristui</p>
           <h1 class="hero__title">Atverkite duris Kristui!</h1>
           <p class="hero__description">
             JP2 parapija kviečia Jus patirti Dievo Meilę, rasti bendrystę ir eiti kartu Jėzaus mokinystės bei misijos keliu.
           </p>
-          <div class="cta-group">
+          <div class="cta-group hero__actions">
             <a class="button-primary" href="/bendruomene/jp2-vizija">Pažink JP2!</a>
             <a class="button-secondary" href="/mokinyste">Keliauk kartu!</a>
-            <a class="button-secondary" href="/parama">Paremk JP2 Misiją!</a>
+            <a class="button-accent" href="/parama">Paremk JP2 Misiją!</a>
           </div>
         </div>
         <div class="hero__visual" aria-hidden="true">
           <svg viewBox="0 0 640 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="640" height="520" rx="32" fill="#F4F9FD" />
-            <path d="M160 440C260 500 380 500 480 440" stroke="#157DBF" stroke-width="24" stroke-linecap="round" />
-            <path d="M236 310C260 330 302 330 326 310" stroke="#FEBD59" stroke-width="20" stroke-linecap="round" />
-            <path d="M300 220L300 80" stroke="#157DBF" stroke-width="28" stroke-linecap="round" />
-            <path d="M240 140L320 60L400 140" stroke="#157DBF" stroke-width="18" stroke-linejoin="round" />
-            <circle cx="320" cy="240" r="72" fill="#FEBD59" opacity="0.12" />
-            <circle cx="320" cy="240" r="40" fill="#FEBD59" />
-            <path d="M320 220V260" stroke="#157DBF" stroke-width="8" stroke-linecap="round" />
-            <path d="M300 240H340" stroke="#157DBF" stroke-width="8" stroke-linecap="round" />
-            <path d="M180 420L220 380L260 420" stroke="#0CA25A" stroke-width="22" stroke-linecap="round" />
-            <path d="M360 420L400 380L440 420" stroke="#FF3131" stroke-width="22" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="hero-panel" x1="320" y1="36" x2="320" y2="484" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFFFFF" />
+                <stop offset="1" stop-color="#F4F9FD" />
+              </linearGradient>
+              <linearGradient id="hero-light" x1="320" y1="128" x2="320" y2="392" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FEF3CC" stop-opacity="0.95" />
+                <stop offset="1" stop-color="#FEF3CC" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="hero-path" x1="320" y1="240" x2="320" y2="470" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#DCEFFA" />
+                <stop offset="1" stop-color="#FFFFFF" />
+              </linearGradient>
+            </defs>
+
+            <rect x="16" y="20" width="608" height="480" rx="42" fill="url(#hero-panel)" />
+            <circle cx="476" cy="118" r="74" fill="#157DBF" fill-opacity="0.08" />
+            <circle cx="186" cy="140" r="58" fill="#FEBD59" fill-opacity="0.16" />
+            <circle cx="512" cy="360" r="66" fill="#FEBD59" fill-opacity="0.08" />
+
+            <path d="M214 462C230 406 262 342 320 262C378 342 410 406 426 462H214Z" fill="url(#hero-path)" />
+            <path d="M238 438C260 388 288 339 320 295C352 339 380 388 402 438" stroke="#D1E7F5" stroke-width="10" stroke-linecap="round" />
+
+            <path d="M246 402V202C246 135 278 92 320 92C362 92 394 135 394 202V402H246Z" fill="#EAF4FB" />
+            <path d="M320 128L434 404H206L320 128Z" fill="url(#hero-light)" />
+            <path d="M266 388V226C266 173 288 140 318 140V356L266 388Z" fill="#157DBF" fill-opacity="0.9" />
+            <path d="M374 388V226C374 173 352 140 322 140V356L374 388Z" fill="#7CC2EA" fill-opacity="0.96" />
+            <path d="M320 166C335 166 348 178 348 193C348 204 342 214 333 220L320 252L307 220C298 214 292 204 292 193C292 178 305 166 320 166Z" fill="#FEBD59" />
+
+            <path d="M508 214V146" stroke="#157DBF" stroke-width="8" stroke-linecap="round" />
+            <path d="M484 170H532" stroke="#157DBF" stroke-width="8" stroke-linecap="round" />
+            <path d="M454 246C474 234 492 228 508 228C524 228 542 234 562 246" stroke="#A9D4EE" stroke-width="8" stroke-linecap="round" />
+
+            <ellipse cx="278" cy="398" rx="10" ry="16" transform="rotate(-20 278 398)" fill="#0CA25A" />
+            <ellipse cx="302" cy="424" rx="10" ry="16" transform="rotate(-18 302 424)" fill="#FF3131" />
+            <ellipse cx="334" cy="430" rx="10" ry="16" transform="rotate(16 334 430)" fill="#157DBF" />
+            <ellipse cx="360" cy="404" rx="10" ry="16" transform="rotate(18 360 404)" fill="#FEBD59" />
           </svg>
         </div>
       </div>
