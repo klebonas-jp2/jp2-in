@@ -1,7 +1,7 @@
 /* Global JP2 styling */
 :root {
   color-scheme: light;
-  font-family: Open Sans, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #111827;
   background: #ffffff;
   --jp2-blue: #157DBF;
@@ -60,17 +60,36 @@ a.button {
 }
 
 .section-title {
-  margin: 0 0 1rem;
-  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+  max-width: 13ch;
+  color: var(--jp2-soft);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
   line-height: 1.08;
 }
 
+.section-kicker {
+  margin: 0;
+  color: var(--jp2-blue);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
 .text-lead {
-  margin: 0 0 1.5rem;
-  max-width: 46rem;
+  margin: 0;
+  max-width: 43rem;
   color: var(--text-secondary);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.8;
+}
+
+.section-intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 58rem;
 }
 
 .grid {
@@ -112,9 +131,9 @@ a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.25rem;
-  border-radius: 0.95rem;
-  font-weight: 600;
+  padding: 0.88rem 1.22rem;
+  border-radius: 999px;
+  font-weight: 550;
   line-height: 1.2;
   transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
@@ -122,12 +141,12 @@ a.button {
 .button-primary {
   background: var(--jp2-blue);
   color: #ffffff;
-  box-shadow: 0 16px 34px rgba(21, 125, 191, 0.17);
+  box-shadow: 0 16px 34px rgba(21, 125, 191, 0.16);
 }
 
 .button-primary:hover {
   background: var(--jp2-soft);
-  box-shadow: 0 20px 36px rgba(21, 125, 191, 0.19);
+  box-shadow: 0 20px 36px rgba(21, 125, 191, 0.18);
 }
 
 .button-primary:hover,
@@ -137,7 +156,7 @@ a.button {
 }
 
 .button-secondary {
-  border: 1px solid rgba(21, 125, 191, 0.22);
+  border: 1px solid rgba(21, 125, 191, 0.24);
   background: #ffffff;
   color: var(--jp2-blue);
 }
@@ -148,21 +167,22 @@ a.button {
 }
 
 .button-accent {
-  border: 1px solid rgba(254, 189, 89, 0.72);
+  border: 1px solid rgba(254, 189, 89, 0.74);
   background: var(--jp2-yellow);
   color: var(--text-primary);
-  box-shadow: 0 16px 34px rgba(254, 189, 89, 0.2);
+  box-shadow: 0 16px 34px rgba(254, 189, 89, 0.19);
 }
 
 .button-accent:hover {
   background: #ffd07c;
-  box-shadow: 0 18px 36px rgba(254, 189, 89, 0.24);
+  box-shadow: 0 18px 36px rgba(254, 189, 89, 0.22);
 }
 
 .button-primary:focus-visible,
 .button-secondary:focus-visible,
 .button-accent:focus-visible,
-.nav a:focus-visible {
+.nav a:focus-visible,
+.quick-link:focus-visible {
   outline: 3px solid rgba(21, 125, 191, 0.28);
   outline-offset: 3px;
 }
@@ -244,53 +264,53 @@ a.button {
 
 .hero {
   background:
-    radial-gradient(circle at 14% 10%, rgba(254, 189, 89, 0.17), transparent 30%),
-    radial-gradient(circle at 86% 12%, rgba(21, 125, 191, 0.12), transparent 26%),
-    linear-gradient(180deg, #ffffff 0%, #fbfdff 56%, #ffffff 100%);
-  padding: 6.8rem 0 5.4rem;
+    linear-gradient(90deg, rgba(244, 249, 253, 0.92) 0%, rgba(255, 255, 255, 0.96) 48%, rgba(244, 249, 253, 0.72) 100%),
+    linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  padding: 7rem 0 6.2rem;
 }
 
 .hero__inner {
   display: grid;
-  gap: clamp(3rem, 4vw, 5rem);
+  gap: clamp(3.5rem, 5vw, 6rem);
   align-items: center;
 }
 
 .hero__content {
   display: grid;
-  gap: 1.35rem;
+  gap: 1.4rem;
 }
 
 .hero__eyebrow {
-  display: block;
-  margin: 0;
-  max-width: 28rem;
-  color: var(--jp2-blue);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  line-height: 1.45;
-  font-size: 0.74rem;
+  max-width: 31rem;
 }
 
 .hero__title {
   margin: 0;
-  max-width: 8.5ch;
-  font-size: clamp(3rem, 5vw, 4.6rem);
-  line-height: 1.02;
+  max-width: 8.4ch;
+  color: var(--jp2-blue);
+  font-size: clamp(3.35rem, 5.4vw, 5.15rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.04;
 }
 
 .hero__description {
   margin: 0;
-  font-size: 1.12rem;
-  max-width: 38rem;
+  max-width: 39rem;
   color: var(--text-secondary);
-  line-height: 1.85;
+  font-size: 1.16rem;
+  line-height: 1.86;
 }
 
 .hero__actions {
-  padding-top: 0.25rem;
-  gap: 0.85rem;
+  padding-top: 0.35rem;
+  gap: 0.9rem;
+}
+
+.hero__visual {
+  display: grid;
+  place-items: center;
+  width: 100%;
 }
 
 .nav-toggle {
@@ -367,55 +387,314 @@ a.button {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-.hero__visual {
-  display: grid;
-  place-items: center;
-  width: 100%;
-}
-
-.hero__visual-shell {
-  width: min(100%, 680px);
+.visual-frame {
+  width: min(100%, 660px);
   padding: 1rem;
   border: 1px solid rgba(21, 125, 191, 0.12);
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 28px 56px rgba(17, 24, 39, 0.08);
+  border-radius: 1.65rem;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 28px 60px rgba(17, 24, 39, 0.07);
 }
 
-.hero__visual-placeholder {
-  aspect-ratio: 5 / 4;
-  border-radius: 1.15rem;
+.visual-frame__surface {
+  min-height: 18rem;
   border: 1px solid rgba(21, 125, 191, 0.1);
-  background: linear-gradient(180deg, #ffffff 0%, #f4f9fd 100%);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(135deg, rgba(21, 125, 191, 0.09), transparent 38%),
+    linear-gradient(315deg, rgba(254, 189, 89, 0.18), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f4f9fd 100%);
 }
 
-.section--light {
-  background: #f8fbff;
+.visual-frame--hero {
+  width: min(100%, 720px);
 }
 
-.features {
+.visual-frame--hero .visual-frame__surface {
+  min-height: clamp(24rem, 34vw, 32rem);
+}
+
+.visual-frame--keys,
+.visual-frame--center,
+.visual-frame--community {
+  width: min(100%, 560px);
+}
+
+.story-section {
+  padding: clamp(5rem, 7vw, 7.5rem) 0;
+  background: #ffffff;
+}
+
+.story-section--vision {
+  padding-top: clamp(5.5rem, 7vw, 8rem);
+}
+
+.story-section--journey,
+.story-section--community {
+  background: var(--surface-light);
+}
+
+.story-section--quick {
+  padding: clamp(3.4rem, 5vw, 4.8rem) 0;
+  background:
+    linear-gradient(90deg, #f4f9fd 0%, #ffffff 55%, #fff8ed 100%);
+}
+
+.story-section--support {
+  background:
+    linear-gradient(90deg, #ffffff 0%, #fff9ee 100%);
+}
+
+.story-layout {
   display: grid;
-  gap: 1.5rem;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
 }
 
-.features__item {
+.story-copy {
   display: grid;
   gap: 1rem;
+  align-content: center;
 }
 
-.features__item h3 {
+.story-link {
+  justify-self: start;
+  margin-top: 0.45rem;
+}
+
+.quote-panel {
+  display: grid;
+  gap: 0.75rem;
+  min-height: 16rem;
+  padding: clamp(2rem, 4vw, 3.25rem);
+  border: 1px solid rgba(21, 125, 191, 0.1);
+  border-radius: 2rem;
+  background: #ffffff;
+  box-shadow: 0 24px 58px rgba(17, 24, 39, 0.06);
+}
+
+.quote-panel__mark {
   margin: 0;
-  font-size: 1.25rem;
+  color: rgba(21, 125, 191, 0.22);
+  font-size: 4.5rem;
+  line-height: 0.72;
 }
 
-.features__item p {
+.quote-panel h3 {
+  margin: 0;
+  color: var(--jp2-blue);
+  font-size: clamp(1.65rem, 2.4vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.16;
+}
+
+.quote-panel p:not(.quote-panel__mark) {
   margin: 0;
   color: var(--text-secondary);
 }
 
-.feature-grid {
+.journey-map {
   display: grid;
-  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 3rem 0 2rem;
+  padding: 1.4rem;
+  border: 1px solid rgba(21, 125, 191, 0.1);
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 20px 48px rgba(21, 125, 191, 0.08);
+}
+
+.journey-marker {
+  position: relative;
+  display: grid;
+  gap: 0.65rem;
+  justify-items: center;
+  color: var(--step-color);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.journey-marker:not(:last-child)::after {
+  position: absolute;
+  top: 1.05rem;
+  left: calc(50% + 1.25rem);
+  width: calc(100% - 1.5rem);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(21, 125, 191, 0.28), rgba(21, 125, 191, 0.04));
+  content: "";
+}
+
+.journey-marker__dot {
+  width: 2.2rem;
+  aspect-ratio: 1;
+  border: 8px solid rgba(255, 255, 255, 0.88);
+  border-radius: 999px;
+  background: var(--step-color);
+  box-shadow: 0 10px 22px rgba(17, 24, 39, 0.1);
+}
+
+.journey-cards {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.journey-card {
+  display: grid;
+  gap: 0.55rem;
+  min-height: 100%;
+  padding: 1.6rem;
+  border: 1px solid rgba(21, 125, 191, 0.09);
+  border-left: 5px solid var(--step-color);
+  border-radius: 1.2rem;
+  background: #ffffff;
+  box-shadow: 0 20px 44px rgba(17, 24, 39, 0.06);
+}
+
+.journey-card__number {
+  display: inline-grid;
+  place-items: center;
+  width: 2.1rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--step-color) 16%, #ffffff);
+  color: var(--step-color);
+  font-weight: 600;
+}
+
+.journey-card__rhythm {
+  margin: 0;
+  color: var(--step-color);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.journey-card h3,
+.mission-key-card h3 {
+  margin: 0;
+  color: var(--jp2-soft);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.journey-card p,
+.mission-key-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.section-actions {
+  margin-top: 2rem;
+}
+
+.mission-key-grid {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.mission-key-card {
+  display: grid;
+  gap: 0.75rem;
+  min-height: 100%;
+  padding: 1.55rem;
+  border: 1px solid rgba(21, 125, 191, 0.1);
+  border-top: 5px solid var(--key-color);
+  border-radius: 1.15rem;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.055);
+}
+
+.mission-key-card__symbol {
+  display: block;
+  width: 2.25rem;
+  aspect-ratio: 1;
+  border: 8px solid color-mix(in srgb, var(--key-color) 24%, #ffffff);
+  border-radius: 999px;
+  background: var(--key-color);
+}
+
+.quick-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.quick-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.quick-links {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 4.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(21, 125, 191, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--jp2-soft);
+  font-weight: 600;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.quick-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(21, 125, 191, 0.24);
+  background: #ffffff;
+}
+
+.quick-link__icon {
+  flex: 0 0 auto;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(21, 125, 191, 0.18);
+  border-radius: 0.85rem;
+  background:
+    linear-gradient(135deg, rgba(21, 125, 191, 0.14), transparent),
+    #ffffff;
+}
+
+.support-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.support-actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.support-action {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid rgba(254, 189, 89, 0.28);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.support-action__icon {
+  width: 2.25rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: var(--jp2-yellow);
+  box-shadow: 0 10px 24px rgba(254, 189, 89, 0.24);
 }
 
 .footer {
@@ -429,6 +708,20 @@ a.button {
   gap: 1.5rem;
 }
 
+.footer h3 {
+  margin: 0 0 0.7rem;
+  color: var(--jp2-soft);
+}
+
+.footer p {
+  margin: 0 0 0.55rem;
+  color: var(--text-secondary);
+}
+
+.footer a {
+  color: var(--jp2-blue);
+}
+
 .footer__legal {
   color: var(--text-secondary);
   font-size: 0.95rem;
@@ -436,19 +729,40 @@ a.button {
 
 @media (min-width: 768px) {
   .hero__inner {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   }
 
-  .feature-grid {
+  .story-layout,
+  .support-layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .story-layout--reversed {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .quick-layout {
+    grid-template-columns: minmax(16rem, 0.42fr) minmax(0, 1fr);
+  }
+
+  .quick-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .journey-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mission-key-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .support-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
-  .feature-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .footer__inner {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -461,15 +775,19 @@ a.button {
     justify-self: end;
   }
 
-  .hero__visual-shell {
-    width: min(100%, 720px);
-  }
-
   .hero__actions .button-primary,
   .hero__actions .button-secondary,
   .hero__actions .button-accent {
-    padding-inline: 1.15rem;
+    padding-inline: 1.2rem;
     font-size: 0.98rem;
+  }
+
+  .journey-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .mission-key-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -560,13 +878,13 @@ a.button {
   }
 
   .hero {
-    padding: 4rem 0 2.5rem;
+    padding: 4rem 0 3rem;
   }
 
   .hero__title {
     max-width: none;
-    font-size: clamp(1.85rem, 8vw, 2.75rem);
-    line-height: 1.05;
+    font-size: clamp(2.1rem, 10vw, 3rem);
+    line-height: 1.06;
   }
 
   .hero__description {
@@ -587,8 +905,42 @@ a.button {
     width: 100%;
   }
 
-  .hero__visual-shell {
+  .visual-frame,
+  .visual-frame--hero,
+  .visual-frame--keys,
+  .visual-frame--center,
+  .visual-frame--community {
     width: min(100%, 520px);
+  }
+
+  .visual-frame__surface,
+  .visual-frame--hero .visual-frame__surface {
+    min-height: 18rem;
+  }
+
+  .story-section {
+    padding: 4rem 0;
+  }
+
+  .journey-map {
+    grid-template-columns: 1fr;
+    align-items: start;
+    margin: 2rem 0 1.5rem;
+  }
+
+  .journey-marker {
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    align-items: center;
+    text-align: left;
+  }
+
+  .journey-marker:not(:last-child)::after {
+    display: none;
+  }
+
+  .section-title {
+    max-width: none;
   }
 }
 
@@ -597,7 +949,10 @@ a.button {
     padding: 3rem 0;
   }
 
-  .cta-group {
-    flex-direction: column;
+  .quick-links,
+  .journey-cards,
+  .mission-key-grid,
+  .support-actions {
+    grid-template-columns: 1fr;
   }
 }
