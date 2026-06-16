@@ -1050,6 +1050,23 @@ Kiekvienas reikšmingas pakeitimas turi būti pateikiamas per Pull Request į `m
 
 Jeigu pakeitimas yra tik dokumentacijos arba teksto gairių pakeitimas ir projekto build nėra prasmingas, Codex turi tai aiškiai parašyti PR aprašyme.
 
+### Rekomenduojama Codex darbo aplinka
+
+Šiam projektui pirmenybė teikiama darbui tiesiogiai per debesijos / web Codex aplinką su GitHub repo jungtimi, o ne per vietinį Windows / OneDrive aplanką.
+
+Codex turi dirbti su:
+
+GitHub repo klebonas-jp2/jp2-in;
+nauja šaka iš main;
+Pull Request į main;
+žmogaus patvirtinimu prieš merge.
+
+Jeigu Codex sesijoje matomas vietinis Windows ar OneDrive aplankas, jis neturi laikyti jo pagrindiniu projekto šaltiniu, nebent žmogus aiškiai nurodo kitaip.
+
+Mažoms svetainės dizaino, CSS ar turinio pataisoms Codex turi vengti perteklinių vietinių kopijų, Windows aplinkos taisymų, naršyklinių peržiūrų ar ilgų techninių aplinkkelių. Jei vietinė aplinka stringa dėl Windows leidimų, tinklo, npm, git, gh ar OneDrive niuansų, Codex turi trumpai tai pažymėti ir, jei įmanoma, tęsti darbą per GitHub repo jungtį ir PR modelį.
+
+Jeigu užduotis labai siaura, Codex turi atlikti tik reikalingą pakeitimą, paleisti tik užduočiai prasmingas patikras ir sukurti PR be papildomų eksperimentų.
+
 ### Merge ir deployment taisyklė
 
 Codex negali merge'inti Pull Request į `main` be aiškaus žmogaus patvirtinimo.
