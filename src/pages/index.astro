@@ -7,11 +7,14 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
       <a href="/" class="logo" aria-label="JP2 pradžia">
         <span class="logo__text">jp2.in</span>
       </a>
-      <input id="menu-toggle" class="nav-toggle" type="checkbox" hidden />
-      <label class="menu-button" for="menu-toggle" aria-label="Atidaryti meniu">
-        <span class="menu-button__bar"></span>
-        <span class="menu-button__bar"></span>
-        <span class="menu-button__bar"></span>
+      <input id="menu-toggle" class="nav-toggle" type="checkbox" aria-label="Atidaryti meniu" aria-controls="main-menu" />
+      <label class="menu-button" for="menu-toggle" aria-label="Atidaryti meniu" aria-controls="main-menu">
+        <span class="menu-button__text">Meniu</span>
+        <span class="menu-button__icon" aria-hidden="true">
+          <span class="menu-button__bar"></span>
+          <span class="menu-button__bar"></span>
+          <span class="menu-button__bar"></span>
+        </span>
       </label>
       <nav class="nav" id="main-menu" aria-label="Pagrindinis meniu">
         <a href="/aktualu">AKTUALU</a>
