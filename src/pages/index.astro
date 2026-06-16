@@ -1,5 +1,75 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
+
+const journeySteps = [
+  {
+    number: '1',
+    title: 'Alfa+ Dalyviai',
+    rhythm: 'Susitikimas',
+    text: 'Alfa+ kurso patirtys ir susitikimas su Gyvuoju Dievu.',
+    color: '#0CA25A',
+  },
+  {
+    number: '2',
+    title: 'Bendrakeleiviai',
+    rhythm: 'Apsisprendimas',
+    text: 'JP2 Vizijos pažinimas ir apsisprendimas keliauti kartu.',
+    color: '#FF3131',
+  },
+  {
+    number: '3',
+    title: 'Jėzaus mokiniai',
+    rhythm: 'Augimas',
+    text: 'Augimas Jėzaus mokinystėje ir duotas Mokinio pažadas.',
+    color: '#2B5BC2',
+  },
+  {
+    number: '4',
+    title: 'Palydėtojai',
+    rhythm: 'JP2 Misijos priėmimas',
+    text: 'Dievo dovanų puoselėjimas ir patikėtos Misijos priėmimas.',
+    color: '#FEBD59',
+  },
+];
+
+const missionKeys = [
+  {
+    title: 'Tikėjimo raktas',
+    text: 'Gyvojo Dievo Meilės patirtis ir tikėjimo jėga maldoje.',
+    color: '#FEBD59',
+  },
+  {
+    title: 'Evangelizacijos raktas',
+    text: 'Drąsus šios Meilės liudijimas ir Evangelijos skelbimas.',
+    color: '#0CA25A',
+  },
+  {
+    title: 'Šventimo raktas',
+    text: 'Dėkojimas už Dievo Meilę ir Sakramentų šventimas.',
+    color: '#FCD501',
+  },
+  {
+    title: 'Tarnystės raktas',
+    text: 'Veikli artimo meilė ir tarnystė mažutėliams.',
+    color: '#FF3131',
+  },
+  {
+    title: 'Bendrystės raktas',
+    text: 'Dalijimasis Dievo Meilės vaisiais ir bendrystė.',
+    color: '#004AAD',
+  },
+];
+
+const quickLinks = [
+  { title: 'Pamaldų tvarka', href: '/aktualu/pamaldu-tvarka' },
+  { title: 'Registracijos', href: '/aktualu/registracijos' },
+  { title: 'Renginiai', href: '/naujienos' },
+  { title: 'Skelbimai', href: '/naujienos' },
+  { title: 'Maldos intencijos', href: '/aktualu/sv-misiu-intencijos' },
+  { title: 'Kontaktai', href: '/aktualu/kontaktai' },
+];
+
+const supportWays = ['Aukojimas', 'Malda', 'Savanorystė'];
 ---
 <BaseLayout title="JP2 | Atverkite duris Kristui" description="JP2 parapija kviečia atverti duris Kristui per Meilės Dvasią, Mokinystę ir Misiją.">
   <header class="header">
@@ -33,7 +103,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="hero__eyebrow">VILNIAUS ŠV. JONO PAULIAUS II PARAPIJA</p>
+          <p class="section-kicker hero__eyebrow">VILNIAUS ŠV. JONO PAULIAUS II PARAPIJA</p>
           <h1 class="hero__title">Atverkite duris Kristui!</h1>
           <p class="hero__description">
             JP2 parapija kviečia Jus patirti Dievo Meilę, rasti bendrystę ir eiti kartu Jėzaus mokinystės bei misijos keliu.
@@ -45,123 +115,161 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
           </div>
         </div>
         <div class="hero__visual" aria-hidden="true">
-          <div class="hero__visual-shell">
-            <div class="hero__visual-placeholder"></div>
+          <div class="visual-frame visual-frame--hero">
+            <div class="visual-frame__surface"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Atveriame duris Kristui į žmonių gyvenimus</h2>
-        <p class="text-lead">
-          Meilės Dvasioje per Jo Misiją ir Mokinystę… JP2 svetainė yra kvietimas susipažinti su parapijos kelione ir atrasti naują bendrystę su Dievu.
-        </p>
+    <section class="story-section story-section--vision" id="vizija">
+      <div class="container story-layout">
+        <div class="story-copy">
+          <p class="section-kicker">JP2 kvietimas ir mūsų Vizija</p>
+          <h2 class="section-title">Gimėme kaip atsakas į šį kvietimą</h2>
+          <p class="text-lead">
+            Vilniaus šv. Jono Pauliaus II parapija yra kvietimas atverti duris Kristui, bendruomenei ir misijai.
+          </p>
+          <a class="button-secondary story-link" href="/bendruomene/jp2-vizija">Susipažinti su JP2 Vizija</a>
+        </div>
+        <aside class="quote-panel">
+          <p class="quote-panel__mark">„</p>
+          <h3>Atveriame duris Kristui į žmonių gyvenimus!</h3>
+          <p>Meilės Dvasioje per Jo Misiją ir Mokinystę...</p>
+        </aside>
       </div>
     </section>
 
-    <section class="section section--light">
+    <section class="story-section story-section--journey" id="mokinyste">
       <div class="container">
-        <div class="features">
-          <article class="card features__item card--highlight">
-            <h3>Alfa+ Dalyviai</h3>
-            <p>Alfa+ kurso patirtys ir susitikimas su Gyvuoju Dievu.</p>
-          </article>
-          <article class="card features__item card--highlight">
-            <h3>Bendrakeleiviai</h3>
-            <p>JP2 Vizijos pažinimas ir apsisprendimas keliauti kartu.</p>
-          </article>
-          <article class="card features__item card--highlight">
-            <h3>Jėzaus mokiniai</h3>
-            <p>Augimas Jėzaus mokinystėje ir duotas Mokinio pažadas.</p>
-          </article>
-          <article class="card features__item card--highlight">
-            <h3>Palydėtojai</h3>
-            <p>Dievo dovanų puoselėjimas ir patikėtos Misijos priėmimas.</p>
-          </article>
+        <div class="section-intro">
+          <p class="section-kicker">Mokinystės kelionė</p>
+          <h2 class="section-title">Mūsų bendruomenės žingsniai JP2 Vizijos link</h2>
+          <p class="text-lead">
+            Tai mūsų bendruomenės kelias: nuo pirmo susitikimo su Gyvuoju Dievu iki brandžios Jėzaus mokinystės ir Jo Misijos tarnystės.
+          </p>
+        </div>
+
+        <div class="journey-map" aria-label="Mokinystės kelionės žingsniai">
+          {journeySteps.map((step) => (
+            <div class="journey-marker" style={`--step-color: ${step.color}`}>
+              <span class="journey-marker__dot" aria-hidden="true"></span>
+              <span>{step.title}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="journey-cards">
+          {journeySteps.map((step) => (
+            <article class="journey-card" style={`--step-color: ${step.color}`}>
+              <span class="journey-card__number">{step.number}</span>
+              <p class="journey-card__rhythm">{step.rhythm}</p>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="cta-group section-actions">
+          <a class="button-primary" href="/mokinyste">Atrask Mokinystės kelionę</a>
+          <a class="button-secondary" href="/mokinyste/kas-yra-mokinystes-kelione">Sužinok daugiau</a>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Misijos raktai</h2>
-          <p class="text-lead">Kiekvienas raktas atspindi JP2 parapijos misijos kryptį ir Dievo Meilės veikimą mūsų gyvenimuose.</p>
+    <section class="story-section" id="misijos-raktai">
+      <div class="container story-layout story-layout--mission">
+        <div class="story-copy">
+          <p class="section-kicker">Misijos raktai</p>
+          <h2 class="section-title">Raktai, kuriais atveriame duris Kristui</h2>
+          <p class="text-lead">
+            Šiais raktais atveriame duris Kristui į savo ir sutiktų žmonių gyvenimus.
+          </p>
+          <a class="button-secondary story-link" href="/bendruomene/misijos-raktai">Atrask JP2 Misiją</a>
         </div>
-        <div class="feature-grid">
-          <article class="card">
-            <h3>Tikėjimo raktas</h3>
-            <p>Gyvojo Dievo Meilės patirtis ir tikėjimo jėga maldoje.</p>
-          </article>
-          <article class="card">
-            <h3>Evangelizacijos raktas</h3>
-            <p>Drąsus šios Meilės liudijimas ir Evangelijos skelbimas.</p>
-          </article>
-          <article class="card">
-            <h3>Šventimo raktas</h3>
-            <p>Dėkojimas už Dievo Meilę ir Sakramentų šventimas.</p>
-          </article>
-          <article class="card">
-            <h3>Tarnystės raktas</h3>
-            <p>Veikli artimo meilė ir tarnystė mažutėliams.</p>
-          </article>
-          <article class="card">
-            <h3>Bendrystės raktas</h3>
-            <p>Dalijimasis Dievo Meilės vaisiais ir bendrystė.</p>
-          </article>
+        <div class="visual-frame visual-frame--keys" aria-hidden="true">
+          <div class="visual-frame__surface"></div>
         </div>
+      </div>
+
+      <div class="container mission-key-grid">
+        {missionKeys.map((key) => (
+          <article class="mission-key-card" style={`--key-color: ${key.color}`}>
+            <span class="mission-key-card__symbol" aria-hidden="true"></span>
+            <h3>{key.title}</h3>
+            <p>{key.text}</p>
+          </article>
+        ))}
       </div>
     </section>
 
-    <section class="section section--light">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Aktualu</h2>
-          <p class="text-lead">Greitas kelias į svarbiausią parapijos informaciją: pamaldos, registracijos ir praktinė pagalba.</p>
+    <section class="story-section story-section--quick" id="aktualu">
+      <div class="container quick-layout">
+        <div class="quick-copy">
+          <p class="section-kicker">Aktualu</p>
+          <h2 class="section-title">Tai, kas gali būti svarbu ir Tau</h2>
+          <a class="button-secondary story-link" href="/aktualu">Peržiūrėti viską</a>
         </div>
-        <div class="feature-grid">
-          <article class="card">
-            <h3>Pamaldų tvarka</h3>
-            <p>Sužinok, kada vyksta Šv. Mišios ir maldos susitikimai parapijoje.</p>
-          </article>
-          <article class="card">
-            <h3>Registracijos</h3>
-            <p>Rask patvirtintą kelią registruotis į parapijos renginius ar kursus.</p>
-          </article>
-          <article class="card">
-            <h3>Skelbimai</h3>
-            <p>Peržiūrėk naujausius parapijos kvietimus ir žinias.</p>
-          </article>
-          <article class="card">
-            <h3>Kunigų patarnavimai</h3>
-            <p>Sužinok, kaip kreiptis dėl pastoracinių reikmių ir parapijos pagalbos.</p>
-          </article>
+        <div class="quick-links" aria-label="Greitos praktinės nuorodos">
+          {quickLinks.map((link) => (
+            <a class="quick-link" href={link.href}>
+              <span class="quick-link__icon" aria-hidden="true"></span>
+              <span>{link.title}</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Misijų centras</h2>
-        <p class="text-lead">JP2 Misijų centras – tai ne tik pastatas, bet žadinanti vieta maldai, mokinystei ir bendruomenei.</p>
+    <section class="story-section" id="misiju-centras">
+      <div class="container story-layout story-layout--reversed">
+        <div class="visual-frame visual-frame--center" aria-hidden="true">
+          <div class="visual-frame__surface"></div>
+        </div>
+        <div class="story-copy">
+          <p class="section-kicker">Misijų centras</p>
+          <h2 class="section-title">Naujosios Evangelizacijos namai Vilniuje</h2>
+          <p class="text-lead">
+            JP2 Misijų centras – tai ne tik pastatas, bet namai maldai, mokinystei, misijai ir bendruomenei.
+          </p>
+          <a class="button-primary story-link" href="/misiju-centras">Sužinok daugiau</a>
+        </div>
       </div>
     </section>
 
-    <section class="section section--light">
-      <div class="container">
-        <h2 class="section-title">Bendruomenė</h2>
-        <p class="text-lead">Prisijunk prie JP2 bendruomenės: kartu melstis, tarnauti ir augti žingsnis po žingsnio.</p>
+    <section class="story-section story-section--community" id="bendruomene">
+      <div class="container story-layout">
+        <div class="story-copy">
+          <p class="section-kicker">Bendruomenė</p>
+          <h2 class="section-title">Mūsų bendrystės erdvė</h2>
+          <p class="text-lead">
+            JP2 yra atvira ir auganti Kristaus mokinių bendruomenė, kurioje žmogus kviečiamas melstis, tarnauti ir keliauti kartu.
+          </p>
+          <a class="button-secondary story-link" href="/bendruomene">Susipažinti</a>
+        </div>
+        <div class="visual-frame visual-frame--community" aria-hidden="true">
+          <div class="visual-frame__surface"></div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="card card--highlight">
-          <h2 class="section-title">Paremk JP2 Misiją</h2>
-          <p class="text-lead">Kviečiame prisidėti prie JP2 parapijos misijos: tu esi svarbi bendruomenės dalis.</p>
-          <a class="button-primary" href="/parama">Paremk JP2 Misiją!</a>
+    <section class="story-section story-section--support" id="parama">
+      <div class="container support-layout">
+        <div class="story-copy">
+          <p class="section-kicker">Parama</p>
+          <h2 class="section-title">Tavo parama padeda augti JP2 Misijai</h2>
+          <p class="text-lead">
+            Dėkojame už kiekvieną maldą, auką ir savanorystę. Kartu kuriame namus, kuriuose atsiveria durys Kristui.
+          </p>
+          <a class="button-accent story-link" href="/parama">Paremk JP2 Misiją!</a>
+        </div>
+        <div class="support-actions" aria-label="Paramos būdai">
+          {supportWays.map((way) => (
+            <div class="support-action">
+              <span class="support-action__icon" aria-hidden="true"></span>
+              <span>{way}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
