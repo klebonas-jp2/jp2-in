@@ -999,4 +999,68 @@ Prieš kurdamas naują komponentą ar sekciją agentas turi:
 8. Laikytis `docs/site-map.md` puslapių medžio ir nekurti naujų pagrindinio meniu punktų be žmogaus patvirtinimo.
 9. Aiškiai pažymėti vietas, kur reikia žmogaus sprendimo.
 
+---
+
+## 29. Codex darbo tvarka
+
+Šis skyrius apibrėžia bendrą Codex darbo tvarką šiame projekte, kad jos nereikėtų kartoti kiekvienoje atskiroje užduotyje.
+
+### Privalomi šaltiniai
+
+Prieš atlikdamas turinio, dizaino, struktūros, komponentų ar workflow pakeitimus, Codex turi remtis susijusiais projekto dokumentais:
+
+- `AGENTS.md`
+- `docs/jp2-vizija.md`
+- `docs/design-system.md`
+- `docs/site-map.md`
+- `docs/content-guidelines.md`
+- `docs/workflow.md`
+
+Jeigu užduotis susijusi su JP2 Vizija, Mokinyste, Misijos raktais, Misijų centru, tekstų tonu, puslapių struktūra, dizainu ar publikavimu, Codex turi taikyti atitinkamus `docs/*.md` dokumentus prieš darydamas pakeitimus.
+
+Jeigu tarp dokumentų kyla prieštara, pirmenybė teikiama `docs/jp2-vizija.md`.
+
+### Strateginių failų apsauga
+
+Dizaino, turinio, puslapių, komponentų ar smulkių pataisų užduotyse Codex negali keisti šių failų ir sričių be aiškaus žmogaus leidimo:
+
+- kanoninių JP2 Vizijos, Misijos raktų ir Mokinystės kelionės formuluočių;
+- `docs/` dokumentų;
+- `.github/workflows/` failų;
+- `astro.config.mjs`;
+- `package.json`, `package-lock.json` ir priklausomybių failų;
+- domeno, publikavimo ar deployment nustatymų;
+- oficialių logotipų, simbolių ir patvirtintos spalvų sistemos;
+- kontaktų, telefonų, el. pašto adresų, pamaldų laikų, registracijų, ChMeetings, Paysera ar aukojimo nuorodų;
+- privatumo politikos ir kitų teisinių tekstų.
+
+Jeigu tokio failo ar srities keitimas būtinas užduočiai atlikti, Codex pirmiausia turi aiškiai įvardyti priežastį ir gauti žmogaus leidimą.
+
+### Branch ir Pull Request tvarka
+
+Codex turi dirbti atskiroje šakoje, ne tiesiogiai `main` šakoje.
+
+Kiekvienas reikšmingas pakeitimas turi būti pateikiamas per Pull Request į `main`. Pull Request aprašyme Codex turi nurodyti:
+
+- kas pakeista;
+- kokie failai ir puslapiai paveikti;
+- ar buvo SEO, turinio, dizaino arba workflow pakeitimų;
+- kokios patikros paleistos;
+- ko žmogui reikia peržiūrėti arba patvirtinti.
+
+Jeigu pakeitimas yra tik dokumentacijos arba teksto gairių pakeitimas ir projekto build nėra prasmingas, Codex turi tai aiškiai parašyti PR aprašyme.
+
+### Merge ir deployment taisyklė
+
+Codex negali merge'inti Pull Request į `main` be aiškaus žmogaus patvirtinimo.
+
+Net jeigu patikros praeina sėkmingai, tai nėra leidimas merge'inti ar publikuoti. Techninis patikrų sėkmingumas reiškia tik tai, kad pakeitimas gali būti peržiūrėtas.
+
+Po aiškiai patvirtinto merge į `main`, Codex turi patikrinti GitHub Actions deploy eigą ir rezultatą:
+
+1. patikrinti, ar po merge startavo atitinkamas GitHub Actions workflow;
+2. sekti deploy būseną iki sėkmės arba klaidos, jei įmanoma;
+3. pranešti žmogui galutinį rezultatą;
+4. jei deploy nepavyko, pateikti trumpą klaidos santrauką ir nesiimti rizikingų taisymų be atskiro leidimo.
+
 **Agentas paruošia. Žmogus patvirtina. Tik tada publikuojama.**
