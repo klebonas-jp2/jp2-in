@@ -286,10 +286,10 @@ a.button {
 
 .hero__title {
   margin: 0;
-  max-width: 8.4ch;
+  max-width: 12.25ch;
   color: var(--jp2-blue);
   font-size: clamp(3.65rem, 5.7vw, 5.6rem);
-  font-weight: 620;
+  font-weight: 540;
   letter-spacing: 0;
   line-height: 1.04;
 }
